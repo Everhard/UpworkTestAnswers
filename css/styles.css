@@ -1,0 +1,16 @@
+.options {
+    list-style-type: none;
+}
+
+.options li {
+    margin-bottom: 10px;
+    background: aliceblue;
+}
+
+.options li.right-answer {
+    background: greenyellow;
+}
+
+.options code {
+    white-space: pre;
+}

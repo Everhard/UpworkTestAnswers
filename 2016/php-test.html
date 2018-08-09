@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upwork Tests 2016</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+    <h1>Upwork Tests 2016</h1>
+
+    <h2>PHP Test</h2>
+
+    <p><strong>Question:</strong> what is the best practice for running MySQL queries in PHP? Consider the risk of SQL injection.</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+Use mysql_query() and variables:
+
+for example:
+$input= $_POST["user-input"]
+mysql_query("INSERT INTO table (column) VALUES ('" . $input . "')");
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+Use PDO prepared statements and parameterized queries:
+
+for example:
+$input= $_POST["user-input"]
+$stmt = $pdo->prepare('INSERT INTO table (column) VALUES (":input");
+$stmt->execute(array(':input' => $input));
+            </code>
+        </li>
+        <li>
+            <code>
+Use mysql_query() and string escaped variables:
+
+for example:
+$input= $_POST["user-input"]
+$input_safe = mysql_real_escape_string($input);
+mysql_query("INSERT INTO table (column) VALUES ('" . $input . "')");
+            </code>
+        </li>
+        <li>
+            <code>
+Use mysql_query() and variables with a blacklisting check:
+
+for example:
+$blacklist = array("DROP", "INSERT", "DELETE");
+
+$input= $_POST["user-input"]
+if (!$array_search($blacklist))) mysql_query("INSERT INTO table (column) VALUES ('" .
+$input. "')");
+            </code>
+        </li>
+    </ul>
+
+</body>
+</html>
