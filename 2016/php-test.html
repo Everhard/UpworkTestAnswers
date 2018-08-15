@@ -588,5 +588,82 @@ $input. "')");
             </code>
         </li>
     </ul>
+
+    <p><strong>Question:</strong> Which of the following code snippets has the most appropriate headers to force the browser to download a CSV file?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li class="right-answer">
+            <code>
+                header("Content-type: text/csv");
+                header("Content-Disposition: attachment; filename=file.csv");
+                header("Pragma: no-cache");
+                header("Expires: 0");
+            </code>
+        </li>
+        <li>
+            <code>
+                header("Content-type: application/download");
+                header("Content-Disposition: attachment; filename=file.csv");
+                header("Pragma: no-cache");
+                header("Expires: 0");
+            </code>
+        </li>
+        <li>
+            <code>
+                header("Content-type: application/csv");
+                header("Content-Disposition: attachment; filename=file.csv");
+                header("Pragma: no-cache");
+                header("Expires: 0");
+            </code>
+        </li>
+        <li>
+            <code>
+                header("Content-type: application/octet-stream");
+                header("Content-Disposition: attachment; filename=file.csv");
+                header("Pragma: no-cache");
+                header("Expires: 0");
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> What is the output of the following code?</p>
+
+    <code>
+        &lt;?php
+          function y($v) {
+            echo $v;
+          }
+          $w = "y";
+          $w("z");
+          $w = "x";
+        ?&gt;
+    </code>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                x
+            </code>
+        </li>
+        <li>
+            <code>
+                y
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                z
+            </code>
+        </li>
+        <li>
+            <code>
+                &lt;error&gt;
+            </code>
+        </li>
+    </ul>
 </body>
 </html>
