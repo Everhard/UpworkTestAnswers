@@ -665,5 +665,551 @@ $input. "')");
             </code>
         </li>
     </ul>
+
+    <p><strong>Question:</strong> What is the fastest way to insert an item $item into the specified $position of the array $array?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                array_insert()
+            </code>
+        </li>
+        <li>
+            <code>
+                array_splice()
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                array_merge() and array_slice()
+            </code>
+        </li>
+        <li>
+            <code>
+                PHP does not have any built-in function that can do this: the source array will have to
+                be copied, and $item inserted in to the required position:
+
+                $n = 0;
+                foreach($array as $key => $val) {
+                    if ($n == $position) {
+                        $target[] = $item;
+                    }
+
+                    ++$n;
+                    $target[$key] = $val;
+                }
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is a possible way to prevent Session Hijacking?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                Use enough random input for generating the session ID
+            </code>
+        </li>
+        <li>
+            <code>
+                Use HTTPS to protect the session ID during transmission
+            </code>
+        </li>
+        <li>
+            <code>
+                Set the cookie with the HttpOnly and Secure attributes to forbid access via JavaScript
+            </code>
+        </li>
+        <li>
+            <code>
+                Regenerating the session ID after successful login
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                All of the above
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is true regarding the str_replace() function in PHP?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                It requires a minimum of 2 parameters.
+            </code>
+        </li>
+        <li>
+            <code>
+                The first argument is the string of array being searched and replaced.
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                The second argument is the the replacement value that replaces found search values.
+            </code>
+        </li>
+        <li>
+            <code>
+                It will replace only the first matched string.
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is incorrect way to take a PHP variable named $name and reassign it to a javascript variable var name?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                &lt;script&gt;
+                  var name = "&lt;php echo $name;?&gt;";
+                &lt;/script&gt;
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                &lt;script&gt;
+                var name =&lt;php echo $name;?&gt;;
+                &lt;/script&gt;
+            </code>
+        </li>
+        <li>
+            <code>
+                &lt;script&gt;
+                var name = "&lt;php echo json_encode($name);?&gt;";
+                &lt;/script&gt;
+            </code>
+        </li>
+        <li>
+            <code>
+                &lt;script&gt;
+                var name = "&lt;php echo addslashes($name);?&gt;";
+                &lt;/script&gt;
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is the right MIME to use as a Content Type for JSON data?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                text/x-json
+            </code>
+        </li>
+        <li>
+            <code>
+                text/javascript
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                application/json
+            </code>
+        </li>
+        <li>
+            <code>
+                application/x-javascript
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> What will be the output of the following code?</p>
+
+    <code>
+        &lt;?php
+
+        $xmlFile = "&lt;root&gt;&lt;css&gt;&lt;element&gt;&lt;csstag&gt;&lt;title&gt;background-color&lt;/title&gt;&lt;value&gt;#FFF&lt;/value&gt;
+        &lt;/csstag&gt;&lt;csstag&gt;&lt;title&gt;color&lt;/title&gt;&lt;value&gt;#333&lt;/value&gt;&lt;/csstag&gt;&lt;csstag&gt;&lt;title&gt;font-
+        family&lt;/title&gt;&lt;value&gt;Verdana, Geneva, sans-serif&lt;/value&gt;&lt;/csstag&gt;&lt;/element&gt;&lt;/css&gt;&lt;/root&gt;";
+
+        $xml = simplexml_load_string($xmlFile);
+
+        foreach($xml->css as $css) {
+            echo (string) $css->element['id']."{";
+            foreach($xml->css->element->csstag as $tag) {
+                $temp = $tag->title.": ".$tag->value.";";
+                echo $temp;
+            }
+            echo "}";
+        }
+        ?&gt;
+    </code>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                syntax error
+            </code>
+        </li>
+        <li>
+            <code>
+                background-color: #FFF;color: #333;font-family: Verdana, Geneva, sans-serif;
+            </code>
+        </li>
+        <li>
+            <code>
+                parse error;
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                {background-color: #FFF;color: #333;font-family: Verdana, Geneva, sans-serif;}
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which code snippet outputs a random string?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                &lt;?php
+                    Function RandomString()
+                    {
+                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    $randstring = '';
+                    for ($i = 0; $i < 10; $i++)
+                        {
+                            $randstring = $characters[rand(0, strlen($characters))];
+                        }
+                    return $randstring;
+                    }
+                    RandomString();
+                    echo $randstring; ?&gt;
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                function generateRandomString($length = 10) {
+                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    $randomString = '';
+                    for ($i = 0; $i < $length; $i++) {
+                        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+                    }
+                    return $randomString;
+                }
+            </code>
+        </li>
+        <li>
+            <code>
+                function generateRandomString($length = 15) {
+                    return substr(sha1(rand()), 0, 0);
+                }
+            </code>
+        </li>
+        <li>
+            <code>
+                function RandomString($length) {
+
+                    $keys = array_merge(range(0,9), range('a', 'z'));
+
+                    for($i=0; $i < $length; $i++) {
+
+                        $key = $keys[array_rand($keys)];
+
+                    }
+
+                    return $key;
+                }
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is the best way to get the index(es) of the highest value(s) in an array?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                $newarr=arsort($arr);
+                $max_key=array_shift(array_keys($new_arr));
+            </code>
+        </li>
+        <li>
+            <code>
+                function max_key($array) {
+                    foreach ($array as $key => $val) {
+                        if ($val == max($array)) return $key;
+                    }
+                }
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                $maxs = array_keys($array, max($array))
+            </code>
+        </li>
+        <li>
+            <code>
+                function array_max_key($array) {
+                  $max_key = -1;
+                  $max_val = -1;
+
+                  foreach ($array as $key => $value) {
+                    if ($value > $max_val) {
+                      $max_key = $key;
+                      $max_val = $value;
+                    }
+                  }
+
+                  return $max_key;
+                }
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> What is the output of the following code?</p>
+
+    <code>
+        &lt;?php
+          echo "&lt;pre&gt;";
+          $array1 = array(
+                  "1"=>"a",
+                  "2"=>"b",
+                  "3"=>"c"
+                 );
+          $array = array_flip($array1);
+          print_r($array);
+          echo "&lt;/pre&gt;";
+        ?&gt;
+    </code>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                Array
+                (
+                    [1] => a
+                    [2] => b
+                    [3] => c
+                )
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                Array
+                (
+                    [a] => 1
+                    [b] => 2
+                    [c] => 3
+                )
+            </code>
+        </li>
+        <li>
+            <code>
+                Array
+                (
+                    [0] => c
+                    [1] => b
+                    [2] => a
+                )
+            </code>
+        </li>
+        <li>
+            <code>
+                Array
+                (
+                    [0] => 1
+                    [1] => 2
+                    [2] => 3
+                )
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> When user clicks on Logout link, the user is redirected to logout.php file and the file has following code?</p>
+
+    <code>
+        &lt;?php
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+        ?&gt;
+    </code>
+
+    <p>What is wrong with the following code?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                session_destroy() should be called prior to session_unset().
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                The first line of the file should be session_start() so that session_destroy() will destroy the active session.
+            </code>
+        </li>
+        <li>
+            <code>
+                PHP will throw a fatal error since the required SESSIONID parameter is not passed in the session_destroy() method.
+            </code>
+        </li>
+        <li>
+            <code>
+                There is nothing wrong with the code and session will be destroyed and user will be redirected to index.php page.
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which is the best way to automatically deploy a PHP website using git push?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                It is not possible.
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                You should have two copies on your server. A bare copy, that you can push/pull from,
+                to which you would push your changes to when you are done. Then you would clone this into
+                your web directory and set up a cronjob to update git pull from your web directory
+                every day or couple of days.
+            </code>
+        </li>
+        <li>
+            <code>
+                Developing from scratch a custom deployment script to manage all the aspects.
+            </code>
+        </li>
+        <li>
+            <code>
+                Copy over your git directory to your web server.
+                On your local copy, modify your .git/config file and add your web server as a remote.
+                On the server, replace .git/hooks/post-update with an existing script to process the
+                rest of the workflow.
+                Make the script executable.
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> What will be the output of the following code?</p>
+
+    <code>
+        &lt;php
+        $numbers=array();
+        $numbers[1] = 1;
+        $numbers[2] = 2;
+        $numbers[3] = 3;
+        $numbers[4] = 4;
+        $key= array_search(3,$numbers);
+        unset($numbers[$key]);
+        print_r($numbers);
+        ?&gt;
+    </code>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                Array ( [1] => 1 [2] => 2 [3] => 4 )
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                Array ( [1] => 1 [2] => 2 [4] => 4 )
+            </code>
+        </li>
+        <li>
+            <code>
+                Array ( [0] => 1 [1] => 2 [2] => 4 )
+            </code>
+        </li>
+        <li>
+            <code>
+                Array ( [0] => 1 [2] => 2 [3] => 4 )
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> What is the output of the following code?</p>
+
+    <code>
+        &lt;php
+          $b = 0;
+          if (isset($b)) {
+            echo "1";
+          } else {
+            echo "2";
+          }
+        ?&gt;
+    </code>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+               0
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                1
+            </code>
+        </li>
+        <li>
+            <code>
+                2
+            </code>
+        </li>
+        <li>
+            <code>
+                12
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which is the best approach to parse HTML and extract structured information from it?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                Use an existing LibXML based library like DOM or phpQuery.
+            </code>
+        </li>
+        <li>
+            <code>
+                String searching and extraction.
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                Use an XML parser (as simpleXML) and XPath queries if available.
+            </code>
+        </li>
+        <li>
+            <code>
+                Use specific regular expressions.
+            </code>
+        </li>
+    </ul>
 </body>
 </html>
