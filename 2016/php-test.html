@@ -1211,5 +1211,275 @@ $input. "')");
             </code>
         </li>
     </ul>
+
+    <p><strong>Question:</strong> Which is true about the curl_setopt() API?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                PHP does not provide such an API.
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                It sets multiple options for a cURL transfer.
+            </code>
+        </li>
+        <li>
+            <code>
+                It executes the curl command.
+            </code>
+        </li>
+        <li>
+            <code>
+                It sets one option for a cURL transfer.
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> What is the correct way to read the result of a variable dump into a string?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                $string = explode($variable);
+            </code>
+        </li>
+        <li>
+            <code>
+                $string = print_r($variable);
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                $string = serialize($variable);
+            </code>
+        </li>
+        <li>
+            <code>
+                $string = var_dump($variable);
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which method is used to sort multidimensional arrays in PHP?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                krsort
+            </code>
+        </li>
+        <li>
+            <code>
+                rsort
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                array_multisort
+            </code>
+        </li>
+        <li>
+            <code>
+                usort
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is true when mail() function returns true?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                The email is reached to the client's mail server.
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                The local mail server (or the SMTP configured in php.ini) accepted the outgoing email for delivery.
+            </code>
+        </li>
+        <li>
+            <code>
+                The local mail server (or the SMTP configured in php.ini) has sent the email.
+            </code>
+        </li>
+        <li>
+            <code>
+                None of the above.
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is the best way to convert one date format into another; portable for all PHP versions?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                $myDateTime = DateTime::createFromFormat('Y-m-d', $dateString);
+                $newDateString = $myDateTime->format('m/d/Y');
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                $old_date = date('l, F d y h:i:s');
+                $old_date_timestamp = strtotime($old_date);
+                $new_date = date('Y-m-d H:i:s', $old_date_timestamp);
+            </code>
+        </li>
+        <li>
+            <code>
+                implode('-', array_reverse(explode('-', $date)));
+            </code>
+        </li>
+        <li>
+            <code>
+                $old_date = date('y-m-d-h-i-s);
+
+                preg_match_all('/(\.+)-(\d+)-(\w+)-(\d+)-(\w+)-(\w+)/', $old_date, $out);
+                $out = $out[0];
+                $time = mktime($out[4], $out[5], $out[6], $out[2], $out[3], $out[1]);
+
+                $new_date = date('Y-m-d H:i:s', $time);
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is incorrect about Common Gateway Interface (CGI)?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li class="right-answer">
+            <code>
+                CGI is a standard method for web server software to delegate the generation of web
+                content to executable files.
+            </code>
+        </li>
+        <li>
+            <code>
+                CGI is the part of the Web server that can communicate with other programs running on
+                the server.
+            </code>
+        </li>
+        <li>
+            <code>
+                A CGI program is any program designed to accept and return data that conforms to the
+                CGI specification. The program can only be written in PHP.
+            </code>
+        </li>
+        <li>
+            <code>
+                A CGI program is any program designed to accept and return data that conforms to the
+                CGI specification. The program could be written in any programming language C, Perl, Java etc.
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Which of the following is incorrect about empty()?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li>
+            <code>
+                empty() checks if a variable is empty.
+            </code>
+        </li>
+        <li class="right-answer">
+            <code>
+                empty() can check expressions.
+            </code>
+        </li>
+        <li>
+            <code>
+                empty() can only check variables .
+            </code>
+        </li>
+        <li>
+            <code>
+                empty() returns false if a variable exists and has a non-empty value.
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> Suppose $var=1;</p>
+    <p>Which of the following will produce a Boolean value of true?</p>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li class="right-answer">
+            <code>
+                var_dump(isset($var))
+            </code>
+        </li>
+        <li>
+            <code>
+                var_dump(is_null($var))
+            </code>
+        </li>
+        <li>
+            <code>
+                var_dump(empty($var))
+            </code>
+        </li>
+        <li>
+            <code>
+                var_dump(defined($var))
+            </code>
+        </li>
+    </ul>
+
+    <p><strong>Question:</strong> What will be the output of the following code?</p>
+
+    <code>
+        &lt;?php
+        $x = 10;
+        if ($x == 10):
+        ?&gt;
+                &lt;p&gt;Hi!&lt;/p&gt;
+        &lt;?php else:?&gt;
+                &lt;p&gt;Bye!&lt;/p&gt;
+        &lt;?php endif; ?&gt;
+    </code>
+
+    <p>Variants:</p>
+
+    <ul class="options">
+        <li class="right-answer">
+            <code>
+                Hi!
+            </code>
+        </li>
+        <li>
+            <code>
+                Bye!
+            </code>
+        </li>
+        <li>
+            <code>
+                The code will throw an error, as there is no curly brace after the if statement, and it
+                has a misplaced colon(:).
+            </code>
+        </li>
+        <li>
+            <code>
+                The code will throw an error, as there is no curly brace after the else statement, and
+                it has a misplaced colon(:).
+            </code>
+        </li>
+    </ul>
 </body>
 </html>
