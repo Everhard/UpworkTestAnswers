@@ -3,7 +3,7 @@
 Right answers to Upwork Tests with explanations.
 
 ## 2018
-Coming soon...
+  - [PHP Test](http://everhard.github.io/UpworkTestAnswers/2018/php-test.html)
 
 ## 2016
 
